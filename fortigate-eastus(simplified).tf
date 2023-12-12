@@ -1,4 +1,4 @@
-# Configurações básicas do Terraform
+#-----------------Configurações básicas do Terraform------------------#
 terraform {
   required_providers {
     fortios = {
@@ -8,7 +8,8 @@ terraform {
   }
 }
 
-# Provedor FortiGate
+#-----------------Provedor FortiGate-----------------#
+
 provider "fortios" {
   # Configuration options
   alias    = "fgtvmeastus"
@@ -20,7 +21,8 @@ provider "fortios" {
 }
 
 
-# VPN IPSEC - Phase 1
+#-----------------VPN IPSEC - Phase 1-----------------#
+
 resource "fortios_vpnipsec_phase1interface" "phase1_eastus" {
   provider       = fortios.fgtvmeastus
   name           = "to_WestUS"
@@ -41,7 +43,8 @@ resource "fortios_vpnipsec_phase1interface" "phase1_eastus" {
   depends_on = [azurerm_public_ip.FGTPublicIp-b]
 }
 
-# VPN IPSEC - Phase 2
+#-----------------VPN IPSEC - Phase 2-----------------#
+
 resource "fortios_vpnipsec_phase2interface" "phase2_eastus" {
   provider   = fortios.fgtvmeastus
   name       = "to_WestUS"
@@ -51,22 +54,8 @@ resource "fortios_vpnipsec_phase2interface" "phase2_eastus" {
   proposal   = "aes128-sha1 aes256-sha1"
 }
 
+#-----------------Address and Address Group-----------------#
 
-#resource "fortios_firewall_address" "to_WestUS_local_subnet_1" {
-#  provider      = fortios.fgtvmeastus
-#  name          = "to_WestUS_local_subnet_1"
-#  allow_routing = "enable"
-#  subnet        = "10.1.1.0 255.255.255.0"
-#}
-#
-#resource "fortios_firewall_address" "to_WestUS_remote_subnet_1" {
-#  provider      = fortios.fgtvmeastus
-#  name          = "to_WestUS_remote_subnet_1"
-#  allow_routing = "enable"
-#  subnet        = "10.2.1.0 255.255.255.0"
-#}
-
-#Address and Address Group
 resource "fortios_firewall_address" "to_WestUS_local_subnet_1" {
   provider      = fortios.fgtvmeastus
   name          = "to_WestUS_local_subnet_1"
@@ -101,10 +90,8 @@ resource "fortios_firewall_addrgrp" "to_WestUS_remote" {
   allow_routing = "enable"
 }
 
+#-----------------Firewall Policy-----------------#
 
-
-
-# Firewall Policy
 resource "fortios_firewall_policy" "vpn_to_WestUS_local_0" {
   provider = fortios.fgtvmeastus
   name     = "vpn_to_WestUS_local_0"
@@ -164,7 +151,8 @@ resource "fortios_firewall_policy" "vpn_to_WestUS_remote_0" {
   depends_on = [fortios_vpnipsec_phase2interface.phase2_eastus, fortios_router_static.static_route_eastus]
 }
 
-# Route Static
+#-----------------Route Static-----------------#
+
 resource "fortios_router_static" "static_route_eastus" {
   provider = fortios.fgtvmeastus
   dst      = "10.2.1.0 255.255.255.0"
@@ -172,3 +160,5 @@ resource "fortios_router_static" "static_route_eastus" {
   device     = "to_WestUS" # Outgoing Interface
   depends_on = [fortios_vpnipsec_phase2interface.phase2_eastus]
 }
+
+#----------------------------------------------#

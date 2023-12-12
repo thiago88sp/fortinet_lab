@@ -1,4 +1,5 @@
-# Provedor FortiGate
+#-----------------Provedor FortiGate-----------------#
+
 provider "fortios" {
   # Configuration options
   alias    = "fgtvmwestus"
@@ -10,7 +11,8 @@ provider "fortios" {
 }
 
 
-# VPN IPSEC - Phase 1
+#-----------------VPN IPSEC - Phase 1-----------------#
+
 resource "fortios_vpnipsec_phase1interface" "phase1_westus" {
   provider       = fortios.fgtvmwestus
   name           = "to_EastUS"
@@ -31,7 +33,8 @@ resource "fortios_vpnipsec_phase1interface" "phase1_westus" {
   depends_on = [azurerm_public_ip.FGTPublicIp-a]
 }
 
-# VPN IPSEC - Phase 2
+#-----------------VPN IPSEC - Phase 2-----------------#
+
 resource "fortios_vpnipsec_phase2interface" "phase2_westus" {
   provider   = fortios.fgtvmwestus
   name       = "to_EastUS"
@@ -42,7 +45,8 @@ resource "fortios_vpnipsec_phase2interface" "phase2_westus" {
 }
 
 
-#Address and Address Group
+#-----------------Address and Address Group-----------------#
+
 resource "fortios_firewall_address" "to_EastUS_local_subnet_1" {
   provider      = fortios.fgtvmwestus
   name          = "to_EastUS_local_subnet_1"
@@ -77,8 +81,8 @@ resource "fortios_firewall_addrgrp" "to_EastUS_remote" {
   allow_routing = "enable"
 }
 
+#-----------------Firewall Policy-----------------#
 
-# Firewall Policy
 resource "fortios_firewall_policy" "vpn_to_EastUS_local_0" {
   provider = fortios.fgtvmwestus
   name     = "vpn_to_EastUS_local_0"
@@ -139,8 +143,8 @@ resource "fortios_firewall_policy" "vpn_to_EastUS_remote_0" {
 }
 
 
+#-----------------Route Static-----------------#
 
-# Route Static
 resource "fortios_router_static" "static_route_westus" {
   provider = fortios.fgtvmwestus
   dst      = "10.1.1.0 255.255.255.0"
@@ -148,3 +152,5 @@ resource "fortios_router_static" "static_route_westus" {
   device     = "to_EastUS" # Outgoing Interface
   depends_on = [fortios_vpnipsec_phase2interface.phase2_westus]
 }
+
+#----------------------------------------------#
