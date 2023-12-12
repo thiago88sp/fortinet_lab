@@ -1,10 +1,14 @@
-# Criação de FortigateVM com VPN IpSec
+# Creating Fortigate VM with IpSec VPN
 
 ![image](https://github.com/thiago88sp/fortinet_lab/assets/54182968/fa4a07c7-89f7-4801-aa0e-97f9afa9cc4c)
 
+## Requirements
 
-
-
+* [Terraform](https://learn.hashicorp.com/terraform/getting-started/install.html) >= 0.12.0
+* Terraform Provider AzureRM >= 2.38.0
+* Terraform Provider Template >= 2.2.2
+* Terraform Provider Random >= 3.0.0
+* Terraform Provider FortiOS >=1.18.1
 
 ## Deployment
 
