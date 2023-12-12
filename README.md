@@ -10,6 +10,16 @@
 * Terraform Provider Random >= 3.0.0
 * Terraform Provider FortiOS >=1.18.1
 
+## Deployment overview
+
+Terraform deploys the following components:
+
+* Two Azure Virtual Network (One in each region) with 2 subnets (public and private)
+* Two FortiGate-VM instances (One in each region) with 2 NICs (untrust and trust)
+* Two firewall rules: one for external, one for internal. (For each region)
+* Two Linux Ubuntu VMs (one in each region for VPN communication testing)
+* Azure Bastion (One in each region, but it is possible to use a single Bastion in one of the regions to communicate with the VMs in the private subnet.)
+
 ## Deployment
 
 To deploy the FortiGate-VM to Azure:
