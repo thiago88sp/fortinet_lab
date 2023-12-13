@@ -3,7 +3,7 @@
 provider "fortios" {
   # Configuration options
   alias    = "fgtvmwestus"
-  hostname = "104.45.209.126"
+  hostname = data.azurerm_public_ip.FGTPublicIp-b.ip_address
   username = "azureadmin"
   password = "Fortinet123#"
   insecure = "true"
@@ -26,11 +26,11 @@ resource "fortios_vpnipsec_phase1interface" "phase1_westus" {
   local_gw       = "0.0.0.0"
   localid_type   = "auto"
   #remote_gw      = "20.185.178.238"
-  remote_gw = azurerm_public_ip.FGTPublicIp-a.ip_address
+  remote_gw = data.azurerm_public_ip.FGTPublicIp-a.ip_address
   proposal  = "aes128-sha1 aes256-sha1"
   type      = "static"
 
-  depends_on = [azurerm_public_ip.FGTPublicIp-a]
+  #depends_on = [data.azurerm_public_ip.FGTPublicIp-b.ip_address]
 }
 
 #-----------------VPN IPSEC - Phase 2-----------------#

@@ -99,7 +99,7 @@ variable "bootstrap-fgtvm-a" {
 variable "license-a" {
   // Change to your own byol license file, license.lic
   type    = string
-  default = "licensea.txt"
+  default = "./licensea.txt"
 }
 
 variable "prefix-a" {
@@ -145,7 +145,7 @@ variable "bootstrap-fgtvm-b" {
 variable "license-b" {
   // Change to your own byol license file, license.lic
   type    = string
-  default = "licenseb.txt"
+  default = "./licenseb.txt"
 }
 
 variable "prefix-b" {
