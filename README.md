@@ -80,6 +80,10 @@ VPN > IPSec Tunnels
 
 ![image](https://github.com/thiago88sp/fortinet_lab/assets/54182968/4767b1f8-dca6-47ca-8123-9bd986c83458)
 
+6. Bring-Up
+
+![image](https://github.com/thiago88sp/fortinet_lab/assets/54182968/05f123b9-03a1-4da1-b339-f6ff6ee19f0f)
+
 
 
 
