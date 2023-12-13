@@ -78,6 +78,7 @@ VPN > IPSec Tunnels
 
 5. Activate the VPN
 
+![image](https://github.com/thiago88sp/fortinet_lab/assets/54182968/4767b1f8-dca6-47ca-8123-9bd986c83458)
 
 
 
