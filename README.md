@@ -49,7 +49,7 @@ To deploy all infrastructure components (including Fortigate VM)
 
 5. After implementing all the necessary infrastructure for the laboratory, we will start the setup regarding the necessary configurations for the VPN tunnel.
 
-For VPN tunnel configuration
+# For VPN tunnel configuration
 
 1. Go to the "fortigate_setup" directory
 
