@@ -70,8 +70,16 @@ To deploy all infrastructure components (including Fortigate VM)
    terraform apply
     ```
 
+4. Once the VPN is configured, go to:
+
+VPN > IPSec Tunnels
 
 ![image](https://github.com/thiago88sp/fortinet_lab/assets/54182968/33d747c4-65fe-4c3f-a255-b06c6b98d9ed)
+
+5. Activate the VPN
+
+
+
 
 
 ## To connect with me on Linkedin
