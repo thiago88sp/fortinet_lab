@@ -29,7 +29,7 @@ Terraform deploys the following components:
 
 ## Deployment
 
-To deploy the FortiGate-VM to Azure:
+To deploy all infrastructure components (including Fortigate VM)
 
 1. Clone the repository.
 
@@ -44,6 +44,32 @@ To deploy the FortiGate-VM to Azure:
    cd XXXXX
    terraform init
     ```
+
+4. Implement all infrastructure items
+
+5. After implementing all the necessary infrastructure for the laboratory, we will start the setup regarding the necessary configurations for the VPN tunnel.
+
+For VPN tunnel configuration
+
+1. Go to the "fortigate_setup" directory
+
+   ```sh
+   cd fortigate_setup
+   terraform init
+    ```
+
+2. Execute the plan to find out what will be deployed inside the Fortigate VM
+
+   ```sh
+   terraform plan
+    ```
+
+3. Deploy the created plan with the necessary information for Fortigate VM VPN configuration
+
+   ```sh
+   terraform apply
+    ```
+
 
 
 ## To connect with me on Linkedin
