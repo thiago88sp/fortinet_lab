@@ -41,7 +41,7 @@ To deploy all infrastructure components (including Fortigate VM)
 3. Initialize the providers and modules:
 
    ```sh
-   cd XXXXX
+   cd fortinet_lab
    terraform init
     ```
 
