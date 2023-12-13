@@ -71,6 +71,8 @@ To deploy all infrastructure components (including Fortigate VM)
     ```
 
 
+![image](https://github.com/thiago88sp/fortinet_lab/assets/54182968/33d747c4-65fe-4c3f-a255-b06c6b98d9ed)
+
 
 ## To connect with me on Linkedin
 [<img src="https://img.shields.io/badge/linkedin-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white" />](https://www.linkedin.com/in/thiagosouzapontes/)
