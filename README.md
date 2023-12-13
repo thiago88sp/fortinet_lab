@@ -76,15 +76,13 @@ VPN > IPSec Tunnels
 
 ![image](https://github.com/thiago88sp/fortinet_lab/assets/54182968/33d747c4-65fe-4c3f-a255-b06c6b98d9ed)
 
-5. Activate the VPN
+5. Activating the VPN the VPN
 
 ![image](https://github.com/thiago88sp/fortinet_lab/assets/54182968/4767b1f8-dca6-47ca-8123-9bd986c83458)
 
-6. Bring-Up
+6. Click Bring Up to activate VPN
 
 ![image](https://github.com/thiago88sp/fortinet_lab/assets/54182968/05f123b9-03a1-4da1-b339-f6ff6ee19f0f)
-
-
 
 
 ## To connect with me on Linkedin
