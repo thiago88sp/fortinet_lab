@@ -20,6 +20,17 @@ Terraform deploys the following components:
 * Two Linux Ubuntu VMs (one in each region for VPN communication testing)
 * Azure Bastion (One in each region, but it is possible to use a single Bastion in one of the regions to communicate with the VMs in the private subnet.)
 
+* Virtual Networks: Separate networks are created for each region (fgtvnetwork-a and fgtvnetwork-b).
+* Subnets: Each network has public and private subnets (publicSubnet-a, privatesubnet-a, and similar for West US).
+* Public IPs: Public IPs are assigned to FortiGate VMs for inbound connections (FGTPublicIp-a and FGTPublicIp-b).
+* NSGs: Network Security Groups control inbound and outbound traffic (publicnetworknsg-a, privatenetworknsg-a, and similar for West US). Outgoing rules are also defined.
+* FortiGate VMs: FortiOS VMs are deployed in each region (fgtvm-a and fgtvm-b). They can use custom images or marketplace images.
+    * VPN Configuration:
+    - Phase 1: Defines the tunnel parameters like authentication, encryption, and lifetime.
+    - Phase 2: Defines the traffic selectors and security settings for the VPN tunnel.
+    - Firewall Policies: Allow traffic between the two networks based on source and destination addresses.
+    - Static Routes: Add routes for the remote network subnets on each FortiGate VM.
+
 ## Deployment
 
 To deploy the FortiGate-VM to Azure:
