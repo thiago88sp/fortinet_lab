@@ -1,6 +1,6 @@
 # Creating Fortigate VM with IpSec VPN
 
-![image](https://github.com/thiago88sp/fortinet_lab/assets/54182968/fa4a07c7-89f7-4801-aa0e-97f9afa9cc4c)
+![image](https://github.com/thiago88sp/fortinet_lab/assets/54182968/983d23e2-0503-4bf1-8605-a68982675e8b)
 
 # Requirements
 
