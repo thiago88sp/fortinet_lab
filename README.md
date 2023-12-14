@@ -24,8 +24,8 @@ Terraform deploys the following components:
         - Phase 2: Defines the traffic selectors and security settings for the VPN tunnel.
         - Firewall Policies: Allow traffic between the two networks based on source and destination addresses.
         - Static Routes: Add routes for the remote network subnets on each FortiGate VM.
-* [Azure Bastion]() (One in each region, but it is possible to use a single Bastion in one of the regions to communicate with the VMs in the private subnet.)
-* [VMs]():Two Linux Ubuntu VMs (one in each region for VPN communication testing)
+* [Azure Bastion](): One in each region, but it is possible to use a single Bastion in one of the regions to communicate with the VMs in the private subnet.
+* [VMs](): Two Linux Ubuntu VMs (one in each region for VPN communication testing)
 
 # Deployment
 
@@ -48,6 +48,18 @@ To deploy all infrastructure components (including Fortigate VM)
 4. Implement all infrastructure items
 
 5. After implementing all the necessary infrastructure for the laboratory, we will start the setup regarding the necessary configurations for the VPN tunnel.
+
+-----------------------------------------------------------------------------
+## Activating Fortigate VM license
+
+The configuration made through this repository provides for the use of a BYOL license, where despite having it in the code, licensing has not been applied, making it necessary to run the command below, with its respective license:
+
+    - Connect to Fortigate VM through Putty or any other client via SSH to perform activation 
+
+   ```sh
+  exec vm-license <token> 
+    ```
+-----------------------------------------------------------------------------
 
 ## For VPN tunnel configuration
 
