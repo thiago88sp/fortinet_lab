@@ -59,6 +59,7 @@ The configuration made through this repository provides for the use of a BYOL li
    ```sh
   exec vm-license <token> 
     ```
+    
 -----------------------------------------------------------------------------
 
 ## For VPN tunnel configuration
