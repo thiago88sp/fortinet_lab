@@ -54,11 +54,11 @@ To deploy all infrastructure components (including Fortigate VM)
 
 * The configuration made through this repository provides for the use of a BYOL license, where despite having it in the code, licensing has not been applied, making it necessary to run the command below, with its respective license:
 
-Connect to Fortigate VM through Putty or any other client via SSH to perform activation: 
+- Connect to Fortigate VM through Putty or any other client via SSH to perform activation: 
 
    ```sh
-  exec vm-license <token> 
-    ```
+   exec vm-license "XXXXXXXXX"
+   ```
 
 ## For VPN tunnel configuration
 
