@@ -49,7 +49,7 @@ To deploy all infrastructure components (including Fortigate VM)
 
 5. After implementing all the necessary infrastructure for the laboratory, we will start the setup regarding the necessary configurations for the VPN tunnel.
 
------------------------------------------------------------------------------
+
 ## Activating Fortigate VM license
 
 The configuration made through this repository provides for the use of a BYOL license, where despite having it in the code, licensing has not been applied, making it necessary to run the command below, with its respective license:
@@ -59,8 +59,7 @@ The configuration made through this repository provides for the use of a BYOL li
    ```sh
   exec vm-license <token> 
     ```
-    
------------------------------------------------------------------------------
+
 
 ## For VPN tunnel configuration
 
